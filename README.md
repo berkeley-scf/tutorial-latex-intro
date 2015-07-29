@@ -1,4 +1,4 @@
-# tutorial-latex
+# tutorial-latex-intro
 Tutorial on LaTeX 
 
 The video that accompanies this material is available here [on YouTube [UNDER CONSTRUCTION]]().
