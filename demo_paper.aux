@@ -1,0 +1,59 @@
+\relax 
+\citation{Bane:etal:2003}
+\citation{Kenn:OHag:2001}
+\citation{Rasm:Will:2006}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\newlabel{eq:main}{{1}{1}}
+\citation{Danc:etal:2008}
+\citation{scalaGauss}
+\citation{Anit:etal:2012}
+\citation{BDHS11}
+\citation{GGSYTY12}
+\citation{openMP}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Parallel algorithm and software implementation}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Distributed linear algebra calculations}{3}}
+\newlabel{sec:block-chol}{{2.1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Our algorithm}{3}}
+\newlabel{sec:our-alg}{{2.2}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  Diagram of the first steps in the distributed Cholesky factorization. Arrows indicate dependencies between processes. Orange coloring indicates computations carried out in each step, and green indicates parts of the matrix that are completely factored as of the previous step. The labels of the form ``id(x,y)'' indicate the process ID and Cartesian coordinates of the process.}}{4}}
+\newlabel{fig:dependency-graph}{{1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The matrix layout used by our algorithm with \relax $D=4\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} and \relax $h=1\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} (left) or \relax $h=3\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} (right). The numbers indicate which process owns a given block. When \relax $h=1\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}, each of the 10 processes owns one block of the matrix. When \relax $h=3\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}, the blocks are a third the size in each dimension. The diagonal processes (1, 5, 8, 10) each own \relax $h(h+1)/2=6\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} blocks, and the off-diagonal processes (2, 3, 4, 6, 7, 9) each own \relax $h^2=9\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} blocks.}}{4}}
+\newlabel{fig:matrix-vary-h}{{2}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Memory use}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}The bigGP R package}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Overview}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}API}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Kriging implementation}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Using the API}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Timing results}{7}}
+\newlabel{sec:results}{{3}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Runtimes as a function of \relax $n\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} for Cholesky decomposition on Hopper, for a variety of numbers of cores. For 49920 cores, we used 24 cores per process; in the other cases we used 6 cores per process. For each data point, we use the optimal value of \relax $h\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}, as determined in Section\nobreakspace  {}3.2\hbox {}. }}{8}}
+\newlabel{fig:vary-n}{{3}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Timing with increasing problem size and comparison with a naive implementation}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Choice of h and comparison to ScaLAPACK}{8}}
+\newlabel{sec:choiceH}{{3.2}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Runtimes for \relax $32768\times 32768\relax \GenericError  {               }{LaTeX Error: Bad math environment delimiter}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.} Cholesky decomposition on Hopper with various values of $h$ using $6$ cores per process. The last line shows \textbf  {ScaLAPACK} as a benchmark. The optimal value of $h$ was chosen by trying all values between 1 and 8. The blocksize for \textbf  {ScaLAPACK} corresponds to the best performance using a power of 2 blocks per process.}}{9}}
+\newlabel{fig:vary-h}{{4}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Astrophysics example}{9}}
+\newlabel{sec:example}{{4}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Statistical model}{9}}
+\citation{hsiao2007}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}R code}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Some results are here.}}{11}}
+\newlabel{tab:results}{{1}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Results}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Results for spatial simulation (1,000 Monte Carlo simulations for each scenario and 100 bootstrap samples). The average out-of-sample $R^2$ is given in parentheses for each exposure model. The first column is the relative bias in estimating $\beta =0.1$. This is the same for $\sigma ^2=200$ and $\sigma ^2=10$ and is estimated from 100,000 Monte Carlo samples, resulting in negligible Monte Carlo error. The final six columns show the standard deviation, average estimated standard error, and 95$\%$ confidence interval coverage, separately for $\sigma _\epsilon ^2=200$ and $\sigma _\epsilon ^2=10$.}}{12}}
+\newlabel{tab:linear.sim}{{2}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{12}}
+\bibstyle{plainnat}
+\bibdata{refs}
+\bibcite{Anit:etal:2012}{{1}{2012}{{Anitescu et~al.}}{{Anitescu, Chen, and Wang}}}
+\bibcite{scalaGauss}{{2}{2014}{{Anitescu et~al.}}{{Anitescu, Chen, and Stein}}}
+\bibcite{BDHS11}{{3}{2011}{{Ballard et~al.}}{{Ballard, Demmel, Holtz, and Schwartz}}}
+\bibcite{Bane:etal:2003}{{4}{2003}{{Banerjee et~al.}}{{Banerjee, Gelfand, and Sirmans}}}
+\bibcite{openMP}{{5}{2008}{{Chapman et~al.}}{{Chapman, Jost, and Van Der~Pas}}}
+\bibcite{Danc:etal:2008}{{6}{2008}{{Dancik and Dorman}}{{}}}
+\bibcite{GGSYTY12}{{7}{2012}{{Georganas et~al.}}{{Georganas, Gonz\'{a}lez-Dom\'{\i }nguez, Solomonik, Zheng, Touri\~{n}o, and Yelick}}}
+\bibcite{hsiao2007}{{8}{2007}{{Hsiao et~al.}}{{Hsiao, Conley, Howell, Sullivan, Pritchet, Carlberg, Nugent, and Phillips}}}
+\bibcite{Kenn:OHag:2001}{{9}{2001}{{Kennedy and O'Hagan}}{{}}}
+\bibcite{Rasm:Will:2006}{{10}{2006}{{Rasmussen and Williams}}{{}}}

@@ -1,0 +1,75 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anitescu et~al.(2012)Anitescu, Chen, and Wang]{Anit:etal:2012}
+Mihai Anitescu, Jie Chen, and Lei Wang.
+\newblock A matrix-free approach for solving the parametric gaussian process
+  maximum likelihood problem.
+\newblock \emph{SIAM Journal on Scientific Computing}, 34\penalty0
+  (1):\penalty0 A240--A262, 2012.
+
+\bibitem[Anitescu et~al.(2014)Anitescu, Chen, and Stein]{scalaGauss}
+Mihai Anitescu, Jie Chen, and Michael Stein.
+\newblock An inversion-free estimating equation approach for gaussian process
+  models.
+\newblock Technical Report ANL/MCS-P5078-0214, Argonne National Laboratory,
+  2014.
+
+\bibitem[Ballard et~al.(2011)Ballard, Demmel, Holtz, and Schwartz]{BDHS11}
+Grey Ballard, James Demmel, Olga Holtz, and Oded Schwartz.
+\newblock Minimizing communication in numerical linear algebra.
+\newblock \emph{SIAM Journal on Matrix Analysis and Applications}, 32\penalty0
+  (3):\penalty0 866--901, 2011.
+
+\bibitem[Banerjee et~al.(2003)Banerjee, Gelfand, and Sirmans]{Bane:etal:2003}
+S.~Banerjee, A.E. Gelfand, and C.F. Sirmans.
+\newblock Directional rates of change under spatial process models.
+\newblock \emph{Journal of the American Statistical Association}, 98\penalty0
+  (464):\penalty0 946--954, 2003.
+
+\bibitem[Chapman et~al.(2008)Chapman, Jost, and Van Der~Pas]{openMP}
+B.~Chapman, G.~Jost, and R.~Van Der~Pas.
+\newblock \emph{Using \pkg{OpenMP}: Portable Shared Memory Parallel
+  Programming}, volume~10.
+\newblock {T}he {MIT} Press, 2008.
+
+\bibitem[Dancik and Dorman(2008)]{Danc:etal:2008}
+Garrett~M Dancik and Karin~S Dorman.
+\newblock \pkg{mlegp}: Statistical analysis for computer models of biological
+  systems using \proglang{R}.
+\newblock \emph{Bioinformatics}, 24\penalty0 (17):\penalty0 1966--1967, 2008.
+
+\bibitem[Georganas et~al.(2012)Georganas, Gonz\'{a}lez-Dom\'{\i}nguez,
+  Solomonik, Zheng, Touri\~{n}o, and Yelick]{GGSYTY12}
+E.~Georganas, J.~Gonz\'{a}lez-Dom\'{\i}nguez, E.~Solomonik, Y.~Zheng,
+  J.~Touri\~{n}o, and K.~Yelick.
+\newblock Communication avoiding and overlapping for numerical linear algebra.
+\newblock In \emph{Proceedings of the International Conference on High
+  Performance Computing, Networking, Storage and Analysis}, SC '12, pages
+  100:1--100:11, Los Alamitos, CA, USA, 2012. IEEE Computer Society Press.
+\newblock ISBN 978-1-4673-0804-5.
+\newblock URL \url{http://dl.acm.org/citation.cfm?id=2388996.2389132}.
+
+\bibitem[Hsiao et~al.(2007)Hsiao, Conley, Howell, Sullivan, Pritchet, Carlberg,
+  Nugent, and Phillips]{hsiao2007}
+E.Y. Hsiao, A.~Conley, D.A. Howell, M.~Sullivan, C.J. Pritchet, R.G. Carlberg,
+  P.E. Nugent, and M.M. Phillips.
+\newblock K-corrections and spectral templates of {T}ype {I}a supernovae.
+\newblock \emph{The Astrophysical Journal}, 663\penalty0 (2):\penalty0 1187,
+  2007.
+
+\bibitem[Kennedy and O'Hagan(2001)]{Kenn:OHag:2001}
+M.C. Kennedy and A.~O'Hagan.
+\newblock Bayesian calibration of computer models.
+\newblock \emph{JRSSB}, 63:\penalty0 425--464, 2001.
+
+\bibitem[Rasmussen and Williams(2006)]{Rasm:Will:2006}
+C.E. Rasmussen and C.K.I. Williams.
+\newblock \emph{Gaussian Processes for Machine Learning}, volume~1.
+\newblock {T}he {MIT} Press, Cambridge, Massachusetts, 2006.
+
+\end{thebibliography}

@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+
+\usepackage{times, graphicx}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+
+
+\usepackage{algpseudocode}
+\algblock{ParFor}{EndParFor}
+\algnewcommand\algorithmicparfor{\textbf{parallel for}}
+\algnewcommand\algorithmicpardo{\textbf{do}}
+\algnewcommand\algorithmicendparfor{\textbf{end\ parallel for}}
+\algrenewtext{ParFor}[1]{\algorithmicparfor\ #1\ \algorithmicpardo}
+\algrenewtext{EndParFor}{\algorithmicendparfor}
+
+\usepackage{xcolor}
+
+\newcommand{\matern}{Mat\'{e}rn}
+\newcommand{\proglang}[1]{\textbf{\texttt{#1}}}
+\newcommand{\pkg}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\bm}[1]{\mbox{\boldmath $#1$}}
+\newcommand\T{\rule{0pt}{3.5ex}}
+
+\begin{document}
+
+\author{Author 1 \\
+Author 2\\
+Author 3}
+
+\title{Your title}
+
+\maketitle
+
+\begin{abstract}
+abstract here
+\end{abstract}
+
+
+\section{Introduction}
+
+\section{Next section}
+
+\subsubsection{A subsection}
+
+\section{Discussion}
+
+\section*{Acknowledgments}
+
+\newpage
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
