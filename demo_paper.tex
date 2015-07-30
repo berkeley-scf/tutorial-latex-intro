@@ -66,10 +66,10 @@ matrix, whose computational cost is of order $n^3$.
 
 For example, a
 basic spatial statistics model (in particular a geostatistical model) can be specified in a hierarchical fashion as
-\begin{eqnarray*}
-\bm{Y}|\bm{g},\bm{\theta} & \sim & \mathcal{N}(\bm{g},\bm{C}_y(\bm{\theta}))\\
+\begin{eqnarray}
+\bm{Y}|\bm{g},\bm{\theta} & \sim & \mathcal{N}(\bm{g},\bm{C}_y(\bm{\theta})) \nonumber\\
 \bm{g}|\bm{\theta} & \sim & \mathcal{N}(\bm{\mu}(\bm{\theta}),\bm{C}_g(\bm{\theta})),\label{eq:main}
-\end{eqnarray*}
+\end{eqnarray}
  where $\bm{g}$ is a vector of latent spatial process values at the $n$ locations, $\bm{C}_y(\bm{\theta})$ is an error covariance matrix (often diagonal), $\mu(\bm{\theta})$ is the mean vector of the latent process, $\bm{C}_g(\bm{\theta})$ is the spatial covariance matrix of the latent process, and $\bm{\theta}$ is a vector of unknown parameters.
 We can marginalize over $\bm{g}$ in (\ref{eq:main}) to obtain the marginal likelihood,
 \[
