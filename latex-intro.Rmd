@@ -17,12 +17,12 @@ A screencast accompanies this material.
 
 We'll use a virtual machine developed here at Berkeley, [the Berkeley Common Environment (BCE)](http://bce.berkeley.edu). BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.
 
-Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (https://github.com/berkeley-scf/tutorial-dynamic-docs).  You can download the files by doing a `git clone` from a terminal window on UNIX-like machine. The following will work from the command line on BCE.
+Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (https://github.com/berkeley-scf/tutorial-latex-intro).  You can download the files by doing a `git clone` from a terminal window on UNIX-like machine. The following will work from the command line on BCE.
 ```{r, clone, eval=FALSE}
-git clone https://github.com/berkeley-scf/tutorial-dynamic-docs
+git clone https://github.com/berkeley-scf/tutorial-latex-intro
 ```
 
-Or go to the [github site for this material](https://github.com/berkeley-scf/tutorial-dynamic-docs) and you can download a zipped copy of the materials (see the "Download ZIP" button in the lower right of the page).
+Or go to the [github site for this material](https://github.com/berkeley-scf/tutorial-latex-intro) and you can download a zipped copy of the materials (see the "Download ZIP" button in the lower right of the page).
 
 To create this HTML document, simply compile the corresponding R Markdown file in R as follows (the following will work from within BCE after cloning the repository as above).
 ```{r, build-html, eval = FALSE}
@@ -94,13 +94,26 @@ pdflatex demo_paper  # to get the cross-referencing and numbering right
 pdflatex demo_paper  # to get the bibliography and refs right
 ```
 
-`bibtex` creates the bibliography file (.bbl) specific to this document from one or more .bib files (which are basically a database of references and can include references not used in the document) and the bibliography style file (.bst). 
+`bibtex` creates the bibliography file (.bbl) specific to this document from one or more .bib files (which are basically a database of references and can include references not used in the document) and the bibliography style file (.bst). Note that entries in the Bibtex format needed to enter in a .bib file can often be obtained directly from bibliographic sources such as Google Scholar.
 
-# 4) Other resources
+# 4) LyX
+
+LyX is a popular graphical front-end to LaTeX. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports Bibtex and allows you to insert R code chunks in Sweave format (see our [tutorial on dynamic documents with R](https://github.com/berkeley-scf/tutorial-dynamic-docs)). 
+
+The *demo_paper.lyx* file is the LyX version of the demo file. To open a LyX file from the command line, type `lyx demo_paper` without the .lyx extension.
+
+To enter math mode, type `Ctrl-m` (or find the icon on the toolbar) and to enter math mode for a displayed equation, use `Ctrl-Shift-m`. Then just type in math mode as you would ordinarily do in a LaTeX text file, but the math will be formatted and displayed on the fly for you to examine. I find this allows me to catch errors easily. The *insert* menu provides a point-and-click way to add various LaTeX objects to your document. You can also directly type in LaTeX within LyX using the TeX icon on the toolbar.
+
+One nice thing about LyX is that you can insert elements by point-and-click and if you then export your document as LaTeX you can see the underlying LaTeX syntax that you can type directly in the future. 
+
+To create a PDF, do `File -> Export -> PDF (pdflatex)`.
+
+
+# 5) Other resources
 
 In addition to a wide variety of resources available via Googling...
 
 * Point to our knitr/dynamic documents and pandoc and Jupyter tutorials
-* You might look at www.latex-tutorial.com for tutorial info. 
+* You might look at (www.latex-tutorial.com) for tutorial info. 
 * There are many good books on LaTeX, including *LaTeX, A Document Preparation System* by Leslie Lamport and others listed [here](http://latex-project.org/guides/books.html).
 * Phil Spector formerly of the UCB Statistics Department, has a nice (albeit a bit old) [overview](https://www.stat.berkeley.edu/~spector/latex2e.pdf).
