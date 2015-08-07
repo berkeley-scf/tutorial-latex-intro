@@ -177,14 +177,16 @@ hr {
 
 <p>We&#39;ll use a virtual machine developed here at Berkeley, <a href="http://bce.berkeley.edu">the Berkeley Common Environment (BCE)</a>. BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.</p>
 
-<p>Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (<a href="https://github.com/berkeley-scf/tutorial-dynamic-docs">https://github.com/berkeley-scf/tutorial-dynamic-docs</a>).  You can download the files by doing a git clone from a terminal window on UNIX-like machine. The following will work from the command line on BCE.</p>
+<p>Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (<a href="https://github.com/berkeley-scf/tutorial-latex-intro">https://github.com/berkeley-scf/tutorial-latex-intro</a>).  You can download the files by doing a <code>git clone</code> from a terminal window on UNIX-like machine. The following will work from the command line on BCE.</p>
 
-<pre><code class="bash">git clone https://github.com/berkeley-scf/tutorial-dynamic-docs
+<pre><code class="bash">git clone https://github.com/berkeley-scf/tutorial-latex-intro
 </code></pre>
+
+<p>Or go to the <a href="https://github.com/berkeley-scf/tutorial-latex-intro">github site for this material</a> and you can download a zipped copy of the materials (see the &ldquo;Download ZIP&rdquo; button in the lower right of the page).</p>
 
 <p>To create this HTML document, simply compile the corresponding R Markdown file in R as follows (the following will work from within BCE after cloning the repository as above).</p>
 
-<pre><code class="bash">Rscript -e &quot;library(knitr); knit2html(&#39;latex.Rmd&#39;)&quot;
+<pre><code class="bash">Rscript -e &quot;library(knitr); knit2html(&#39;latex-intro.Rmd&#39;)&quot;
 </code></pre>
 
 <!--
@@ -213,7 +215,7 @@ hr {
 
 <p>The file <em>demo_paper.tex</em> provides an example LaTeX document. The material is taken from a scientific paper but includes only bits and pieces and is not meant to actually be read. Rather it illustrates a lot of the syntax of LaTeX. </p>
 
-<p>Look through the document and note the following:</p>
+<p>Look through the document (you might start by looking at <em>demo_paper.pdf</em> and looking for the syntax in the LaTeX file that creates different aspects of the PDF) and note the following:</p>
 
 <ul>
 <li>The <em>preamble</em> (the part before <code>\begin{document}</code>), which sets up the document.</li>
@@ -225,9 +227,11 @@ hr {
 <li>The inclusion of a bibliography using BibTeX with <code>\bibliography{name_of_file_with_refs.bib}</code>, whose style can be specified with <code>\bibliographystyle</code>. </li>
 </ul>
 
+<p>You should be able to take <em>demo_paper.tex</em> as a starting point for your own document. In fact, we provide a version of it, <em>demo_paper_shell</em> with the content removed, ready for you to use.</p>
+
 <h2>2.2) Additional functionality for LaTeX</h2>
 
-<p>There is a huge variety of add-on packages for LaTeX that provide additional functionality. These are generally provided as <em>style</em> files whose names end in .sty. To use a package, you use the <code>\usepackage</code> command. The corresponding .sty file should generally be in the directory in which you are working or in a standard location on your machine. For example there is a line numbering package provided in <em>lineno.sty</em> that will allow you to add line numbers to your document as follows:</p>
+<p>There is a huge variety of add-on packages for LaTeX that provide additional functionality. These are generally provided as <em>style</em> files whose names end in .sty. To use a package, you use the <code>\usepackage</code> command. The corresponding .sty file should generally be in the directory in which you are working or in a standard location on your machine. For example there is a line numbering package provided in <em>lineno.sty</em> that will allow you to add line numbers to your document by putting the following code in your preamble:</p>
 
 <pre><code>% load the package and specify the left option to put linenumbers on the left side of the page
 \usepackage[left]{lineno}  
@@ -249,15 +253,27 @@ pdflatex demo_paper  # to get the cross-referencing and numbering right
 pdflatex demo_paper  # to get the bibliography and refs right
 </code></pre>
 
-<p><code>bibtex</code> creates the bibliography file (.bbl) specific to this document from one or more .bib files (which are basically a database of references and can include references not used in the document) and the bibliography style file (.bst). </p>
+<p><code>bibtex</code> creates the bibliography file (.bbl) specific to this document from one or more .bib files (which are basically a database of references and can include references not used in the document) and the bibliography style file (.bst). Note that entries in the Bibtex format needed to enter in a .bib file can often be obtained directly from bibliographic sources such as Google Scholar.</p>
 
-<h1>4) Other resources</h1>
+<h1>4) LyX</h1>
+
+<p>LyX is a popular graphical front-end to LaTeX. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports Bibtex and allows you to insert R code chunks in Sweave format (see our <a href="https://github.com/berkeley-scf/tutorial-dynamic-docs">tutorial on dynamic documents with R</a>). </p>
+
+<p>The <em>demo_paper.lyx</em> file is the LyX version of the demo file. To open a LyX file from the command line, type <code>lyx demo_paper</code> without the .lyx extension.</p>
+
+<p>To enter math mode, type <code>Ctrl-m</code> (or find the icon on the toolbar) and to enter math mode for a displayed equation, use <code>Ctrl-Shift-m</code>. Then just type in math mode as you would ordinarily do in a LaTeX text file, but the math will be formatted and displayed on the fly for you to examine. I find this allows me to catch errors easily. The <em>insert</em> menu provides a point-and-click way to add various LaTeX objects to your document. You can also directly type in LaTeX within LyX using the TeX icon on the toolbar.</p>
+
+<p>One nice thing about LyX is that you can insert elements by point-and-click and if you then export your document as LaTeX you can see the underlying LaTeX syntax that you can type directly in the future. </p>
+
+<p>To create a PDF, do <code>File -&gt; Export -&gt; PDF (pdflatex)</code>.</p>
+
+<h1>5) Other resources</h1>
 
 <p>In addition to a wide variety of resources available via Googling&hellip;</p>
 
 <ul>
 <li>Point to our knitr/dynamic documents and pandoc and Jupyter tutorials</li>
-<li>You might look at <a href="http://www.latex-tutorial.com">www.latex-tutorial.com</a> for tutorial info. </li>
+<li>You might look at (<a href="http://www.latex-tutorial.com">www.latex-tutorial.com</a>) for tutorial info. </li>
 <li>There are many good books on LaTeX, including <em>LaTeX, A Document Preparation System</em> by Leslie Lamport and others listed <a href="http://latex-project.org/guides/books.html">here</a>.</li>
 <li>Phil Spector formerly of the UCB Statistics Department, has a nice (albeit a bit old) <a href="https://www.stat.berkeley.edu/%7Espector/latex2e.pdf">overview</a>.</li>
 </ul>

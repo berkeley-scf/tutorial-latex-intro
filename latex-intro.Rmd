@@ -26,7 +26,7 @@ Or go to the [github site for this material](https://github.com/berkeley-scf/tut
 
 To create this HTML document, simply compile the corresponding R Markdown file in R as follows (the following will work from within BCE after cloning the repository as above).
 ```{r, build-html, eval = FALSE}
-Rscript -e "library(knitr); knit2html('latex.Rmd')"
+Rscript -e "library(knitr); knit2html('latex-intro.Rmd')"
 ```
 
 <!--
@@ -104,9 +104,11 @@ The *demo_paper.lyx* file is the LyX version of the demo file. To open a LyX fil
 
 To enter math mode, type `Ctrl-m` (or find the icon on the toolbar) and to enter math mode for a displayed equation, use `Ctrl-Shift-m`. Then just type in math mode as you would ordinarily do in a LaTeX text file, but the math will be formatted and displayed on the fly for you to examine. I find this allows me to catch errors easily. The *insert* menu provides a point-and-click way to add various LaTeX objects to your document. You can also directly type in LaTeX within LyX using the TeX icon on the toolbar.
 
+To create a PDF, do `File -> Export -> PDF (pdflatex)`.
+
 One nice thing about LyX is that you can insert elements by point-and-click and if you then export your document as LaTeX you can see the underlying LaTeX syntax that you can type directly in the future. 
 
-To create a PDF, do `File -> Export -> PDF (pdflatex)`.
+
 
 
 # 5) Other resources
