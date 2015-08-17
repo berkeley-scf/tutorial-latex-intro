@@ -175,7 +175,9 @@ hr {
 
 <p>A screencast accompanies this material.</p>
 
-<p>We&#39;ll use a virtual machine developed here at Berkeley, <a href="http://bce.berkeley.edu">the Berkeley Common Environment (BCE)</a>. BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.</p>
+<p>We&#39;ll use a virtual machine developed here at Berkeley, <a href="http://bce.berkeley.edu">the Berkeley Common Environment (BCE)</a>. BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.  That said, you can monkey with the formatting of individual pieces of your document, as well as monkeying with the formatting of the entire document.</p>
+
+<p>This tutorial assumes you are able to use the UNIX command line; we provide a tutorial on the <a href="http://statistics.berkeley.edu/computing/training/tutorials">Basics of UNIX</a> in the context of BCE.</p>
 
 <p>Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (<a href="https://github.com/berkeley-scf/tutorial-latex-intro">https://github.com/berkeley-scf/tutorial-latex-intro</a>).  You can download the files by doing a <code>git clone</code> from a terminal window on UNIX-like machine. The following will work from the command line on BCE.</p>
 
@@ -195,23 +197,15 @@ hr {
 #pandoc --mathjax --number-sections spark.md -o spark.html
 -->
 
-<h1>1) Getting prepared</h1>
-
-<p>First, you&#39;ll need to get the BCE virtual machine running on your computer. Start by installing the VirtualBox software on your local machine. BCE runs on VirtualBox. Please follow the <a href="http://bce.berkeley.edu/install">BCE installation instructions</a>. Once you&#39;ve done this, you&#39;ll have a Linux computer running within your own machine.</p>
-
-<p>That said, if you&#39;d like to work on your own machine, you can. But you&#39;ll need to install LaTeX.</p>
-
-<h1>2) The LaTeX document format</h1>
+<h1>1) The LaTeX document format</h1>
 
 <p>LaTeX allows you to do essentially anything in a document, including math syntax, including tables and figures, adding a bibliography, including a table of contents, etc. </p>
 
 <p>The basic premise of LaTeX, in contrast to Word, is that it is a markup language for defining your document. It&#39;s NOT a what-you-see-is-what-you-get (WYSIWYG) program. Rather than specifying the exact formatting of a given word, line, or paragraph, you specify what kind of object everything is and LaTeX deals with the formatting. You do this in a plain text document using LaTeX syntax. </p>
 
-<p>That said, you can monkey with the formatting of individual pieces of your document, as well as monkeying with the formatting of the entire document.</p>
-
 <p>This is not meant as an in-depth introduction to LaTeX, but rather to get you going quickly based on an example, so let&#39;s dive into that.</p>
 
-<h2>2.1) Basic LaTeX syntax</h2>
+<h2>1.1) Basic LaTeX syntax</h2>
 
 <p>The file <em>demo_paper.tex</em> provides an example LaTeX document. The material is taken from a scientific paper but includes only bits and pieces and is not meant to actually be read. Rather it illustrates a lot of the syntax of LaTeX. </p>
 
@@ -219,17 +213,21 @@ hr {
 
 <ul>
 <li>The <em>preamble</em> (the part before <code>\begin{document}</code>), which sets up the document.</li>
+<li>The use of <code>%</code> to make comments that won&#39;t be included in the document.</li>
 <li>The commands for defining sections and subsections. </li>
 <li>The use of user-defined macros (see <code>\newcommand</code>) to define commonly-used syntax that can be used anywhere in the document.</li>
 <li>The specification of math syntax in so-called <em>math mode</em>, which is done inside special symbols (<code>\begin{eqnarray}</code>, <code>$</code>, and <code>\[</code>, among others). </li>
 <li>The insertion of figures and tables. LaTeX will figure out where to put them.</li>
 <li>The use of <code>\label{sec:methods}</code> and <code>\ref{sec:methods}</code> to define and refer to sections, tables, and figures. LaTeX will figure out the numbering for you.</li>
-<li>The inclusion of a bibliography using BibTeX with <code>\bibliography{name_of_file_with_refs.bib}</code>, whose style can be specified with <code>\bibliographystyle</code>. </li>
+<li>The inclusion of a bibliography using BibTeX with <code>\bibliography{name_of_file_with_refs.bib}</code>, whose style can be specified with <code>\bibliographystyle{name_of_style}</code>. </li>
+<li>Citations of sources using <code>\cite</code> and related syntax.</li>
 </ul>
 
-<p>You should be able to take <em>demo_paper.tex</em> as a starting point for your own document. In fact, we provide a version of it, <em>demo_paper_shell</em> with the content removed, ready for you to use.</p>
+<p>The reference information used in <em>demo_paper.tex</em> comes from the <em>refs.bib</em> file included with this tutorial, which contains reference information in the structured format expected by BibTeX.  Note that entries in the Bibtex format needed for a .bib file can often be obtained directly from bibliographic sources such as Google Scholar.</p>
 
-<h2>2.2) Additional functionality for LaTeX</h2>
+<p>You should be able to take <em>demo_paper.tex</em> as a starting point for your own document. In fact, we provide a version of it, <em>demo_paper_shell.tex</em> with the content removed, ready for you to use.</p>
+
+<h2>1.2) Additional functionality for LaTeX</h2>
 
 <p>There is a huge variety of add-on packages for LaTeX that provide additional functionality. These are generally provided as <em>style</em> files whose names end in .sty. To use a package, you use the <code>\usepackage</code> command. The corresponding .sty file should generally be in the directory in which you are working or in a standard location on your machine. For example there is a line numbering package provided in <em>lineno.sty</em> that will allow you to add line numbers to your document by putting the following code in your preamble:</p>
 
@@ -239,11 +237,17 @@ hr {
 \linenumbers               
 </code></pre>
 
-<p>In addition, there is a wide variety of classes that format your document in a pre-specified way, such as for particular academic journals. To use a class, you use the <code>\documentclass{}</code> syntax. The classes are provided by class files whose names end in .cls. The <em>article</em> class (<code>\documentclass{article}</code>) is a standard class that comes with LaTeX. </p>
+<p>To try this in <em>demo_paper.tex</em> simply remove the <code>%</code> from in front of those two lines so they are not commented out.</p>
 
-<p>Related to this, there is a wide variety of biblography styles available via .bst files.</p>
+<p>In addition, there is a wide variety of classes that format your document in a pre-specified way, such as for particular academic journals. To use a class, you use the <code>\documentclass{}</code> syntax in the first line of your document. The classes are provided by class files whose names end in .cls. The <em>article</em> class (<code>\documentclass{article}</code>) is a standard class that comes with LaTeX; it&#39;s the class used in <em>demo_paper.tex</em>.  </p>
 
-<h1>3) Compiling LaTeX to PDF and other formats</h1>
+<p>Analogously, there is a wide variety of biblography styles available via .bst files. Many journals have .bst files that will format things as they want them to be.  In <em>demo_paper.tex</em> I use the <em>plainnat</em> style provided in the <em>natbib</em> package.</p>
+
+<p>As noted for .sty files, the .sty, .cls, and .bst files should generally either be in the directory of your LaTeX file or in a standard location on your machine where LaTeX knows to look for them.</p>
+
+<h1>2) Compiling LaTeX to PDF and other formats</h1>
+
+<h2>2.1) Compiling via the UNIX command line</h2>
 
 <p>The standard way to create a document from a LaTeX file is to create a PDF using <code>pdflatex</code>.  There are also ways to create HTML from LaTeX and to convert from LaTeX to other formats (e.g., see <code>pandoc</code>). Here we&#39;ll just see the creation of a PDF, including use of a bibliography. In general you&#39;ll need to run <code>pdflatex</code> multiple times as there are multiple layers of processing.</p>
 
@@ -253,29 +257,33 @@ pdflatex demo_paper  # to get the cross-referencing and numbering right
 pdflatex demo_paper  # to get the bibliography and refs right
 </code></pre>
 
-<p><code>bibtex</code> creates the bibliography file (.bbl) specific to this document from one or more .bib files (which are basically a database of references and can include references not used in the document) and the bibliography style file (.bst). Note that entries in the Bibtex format needed to enter in a .bib file can often be obtained directly from bibliographic sources such as Google Scholar.</p>
+<p><code>bibtex</code> creates the bibliography file (.bbl) specific to this document from one or more .bib files (which are basically a database of references and can include references not used in the document) and the relevant bibliography style file.</p>
 
-<h1>4) LyX</h1>
+<h2>2.2) Other interfaces to LaTeX &ndash; TeXShop and MiKTeX</h2>
 
-<p>LyX is a popular graphical front-end to LaTeX. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports Bibtex and allows you to insert R code chunks in Sweave format (see our <a href="https://github.com/berkeley-scf/tutorial-dynamic-docs">tutorial on dynamic documents with R</a>). </p>
+<p>TeXShop (for Mac) and MiKTeX (for Windows) provide installations of LaTeX that include the ability to easily create a PDF and see the PDF alongside the source LaTeX file. You should be able to see how to create a PDF using the pull-down menus.</p>
+
+<h1>3) LyX</h1>
+
+<p>LyX is a popular graphical front-end to LaTeX. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports BibTeX and allows you to insert R code chunks in Sweave format (see our <a href="https://github.com/berkeley-scf/tutorial-dynamic-docs">tutorial on dynamic documents with R</a>). </p>
 
 <p>The <em>demo_paper.lyx</em> file is the LyX version of the demo file. To open a LyX file from the command line, type <code>lyx demo_paper</code> without the .lyx extension.</p>
 
 <p>To enter math mode, type <code>Ctrl-m</code> (or find the icon on the toolbar) and to enter math mode for a displayed equation, use <code>Ctrl-Shift-m</code>. Then just type in math mode as you would ordinarily do in a LaTeX text file, but the math will be formatted and displayed on the fly for you to examine. I find this allows me to catch errors easily. The <em>insert</em> menu provides a point-and-click way to add various LaTeX objects to your document. You can also directly type in LaTeX within LyX using the TeX icon on the toolbar.</p>
 
-<p>One nice thing about LyX is that you can insert elements by point-and-click and if you then export your document as LaTeX you can see the underlying LaTeX syntax that you can type directly in the future. </p>
-
 <p>To create a PDF, do <code>File -&gt; Export -&gt; PDF (pdflatex)</code>.</p>
 
-<h1>5) Other resources</h1>
+<p>One nice thing about LyX is that you can insert elements by point-and-click and if you then export your document as LaTeX you can see the underlying LaTeX syntax that you can type directly in the future. </p>
+
+<h1>4) Other resources</h1>
 
 <p>In addition to a wide variety of resources available via Googling&hellip;</p>
 
 <ul>
-<li>Point to our knitr/dynamic documents and pandoc and Jupyter tutorials</li>
 <li>You might look at (<a href="http://www.latex-tutorial.com">www.latex-tutorial.com</a>) for tutorial info. </li>
 <li>There are many good books on LaTeX, including <em>LaTeX, A Document Preparation System</em> by Leslie Lamport and others listed <a href="http://latex-project.org/guides/books.html">here</a>.</li>
 <li>Phil Spector formerly of the UCB Statistics Department, has a nice (albeit a bit old) <a href="https://www.stat.berkeley.edu/%7Espector/latex2e.pdf">overview</a>.</li>
+<li>Our <a href="http://statistics.berkeley.edu/computing/training/tutorials">tutorials on UNIX, dynamic documents and related topics</a> may also be useful.</li>
 </ul>
 
 </body>
