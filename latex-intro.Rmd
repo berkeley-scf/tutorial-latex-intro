@@ -107,7 +107,7 @@ MacTeX (for Mac; includes TeXShop) and MiKTeX (for Windows) provide installation
 
 # 3) LyX
 
-LyX is a popular graphical front-end to LaTeX. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports BibTeX and allows you to insert R code chunks in Sweave format (see our [tutorial on dynamic documents with R](https://github.com/berkeley-scf/tutorial-dynamic-docs)). 
+LyX is a popular graphical front-end to LaTeX that runs on Mac, Windows, and Linux. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports BibTeX and allows you to insert R code chunks in Sweave format (see our [tutorial on dynamic documents with R](https://github.com/berkeley-scf/tutorial-dynamic-docs)). 
 
 The *demo_paper.lyx* file is the LyX version of the demo file. To open a LyX file from the command line, type `lyx demo_paper` without the .lyx extension.
 
