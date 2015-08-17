@@ -15,7 +15,7 @@ This tutorial covers the basics of LaTeX, which is widely used in scientific and
 
 A [screencast](http://youtu.be/8khoelwmMwo) of this material accompanies this document.
 
-We'll use a virtual machine developed here at Berkeley, [the Berkeley Common Environment (BCE)](http://bce.berkeley.edu). BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.  That said, you can monkey with the formatting of individual pieces of your document, as well as monkeying with the formatting of the entire document.
+We'll use a virtual machine developed here at Berkeley, [the Berkeley Common Environment (BCE)](http://bce.berkeley.edu). BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.  However, you could also install LaTeX directly on your computer, e.g., MacTeX for Mac or MiKTeX for Windows.
 
 This tutorial assumes you are able to use the UNIX command line; we provide a tutorial on the [Basics of UNIX](http://statistics.berkeley.edu/computing/training/tutorials) in the context of BCE.
 
@@ -41,7 +41,7 @@ Rscript -e "library(knitr); knit2html('latex-intro.Rmd')"
 
 LaTeX allows you to do essentially anything in a document, including math syntax, including tables and figures, adding a bibliography, including a table of contents, etc. 
 
-The basic premise of LaTeX, in contrast to Word, is that it is a markup language for defining your document. It's NOT a what-you-see-is-what-you-get (WYSIWYG) program. Rather than specifying the exact formatting of a given word, line, or paragraph, you specify what kind of object everything is and LaTeX deals with the formatting. You do this in a plain text document using LaTeX syntax. 
+The basic premise of LaTeX, in contrast to Word, is that it is a markup language for defining your document. It's NOT a what-you-see-is-what-you-get (WYSIWYG) program. Rather than specifying the exact formatting of a given word, line, or paragraph, you specify what kind of object everything is and LaTeX deals with the formatting. You do this in a plain text document using LaTeX syntax. That said, you can monkey with the formatting of individual pieces of your document, as well as monkeying with the formatting of the entire document.
 
 
 
@@ -102,7 +102,7 @@ pdflatex demo_paper  # to get the bibliography and refs right
 
 ## 2.2) Other interfaces to LaTeX -- TeXShop and MiKTeX
 
-TeXShop (for Mac) and MiKTeX (for Windows) provide installations of LaTeX that include the ability to easily create a PDF and see the PDF alongside the source LaTeX file. You should be able to see how to create a PDF using the pull-down menus.
+MacTeX (for Mac; includes TeXShop) and MiKTeX (for Windows) provide installations of LaTeX that include the ability to easily create a PDF and see the PDF alongside the source LaTeX file. You should be able to see how to create a PDF using the pull-down menus.
 
 
 # 3) LyX
