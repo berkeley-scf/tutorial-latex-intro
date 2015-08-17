@@ -13,7 +13,7 @@ opts_chunk$set(engine='bash') # because we're using a lot of bash, let's set as 
 
 This tutorial covers the basics of LaTeX, which is widely used in scientific and academic contexts to prepare documents. LaTeX is particularly good at handling mathematical notation and LaTeX syntax for specifying math can be embedded in a wide variety of contexts (Jupyter/IPython Notebook, R Markdown, Microsoft Word equation editor, etc.). Here we'll briefly discuss the use of LaTeX for standalone documents, as a way to get started with using LaTeX syntax more generally.
 
-A screencast accompanies this material.
+A [screencast](http://youtu.be/8khoelwmMwo) of this material accompanies this document.
 
 We'll use a virtual machine developed here at Berkeley, [the Berkeley Common Environment (BCE)](http://bce.berkeley.edu). BCE is a virtual Linux machine - basically it is a Linux computer that you can run within your own computer, regardless of whether you are using Windows, Mac, or Linux. This provides a common environment so that things behave the same for all of us.  That said, you can monkey with the formatting of individual pieces of your document, as well as monkeying with the formatting of the entire document.
 
