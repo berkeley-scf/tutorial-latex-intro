@@ -109,6 +109,8 @@ MacTeX (for Mac; includes TeXShop) and MiKTeX (for Windows) provide installation
 
 LyX is a popular graphical front-end to LaTeX that runs on Mac, Windows, and Linux. It provides an editor window that has the look and feel of word processing software such as Word but with all the power of LaTeX. You can import/export to/from LaTeX and compile to PDF. It supports BibTeX and allows you to insert R code chunks in Sweave format (see our [tutorial on dynamic documents with R](https://github.com/berkeley-scf/tutorial-dynamic-docs)). 
 
+Note that to use LyX on BCE, you need to run the commands in the *bce.sh* file to install LyX.
+
 The *demo_paper.lyx* file is the LyX version of the demo file. To open a LyX file from the command line, type `lyx demo_paper` without the .lyx extension.
 
 To enter math mode, type `Ctrl-m` (or find the icon on the toolbar) and to enter math mode for a displayed equation, use `Ctrl-Shift-m`. Then just type in math mode as you would ordinarily do in a LaTeX text file, but the math will be formatted and displayed on the fly for you to examine. I find this allows me to catch errors easily. The *insert* menu provides a point-and-click way to add various LaTeX objects to your document. You can also directly type in LaTeX within LyX using the TeX icon on the toolbar.
