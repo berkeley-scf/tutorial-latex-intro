@@ -19,7 +19,7 @@ We'll use a virtual machine developed here at Berkeley, [the Berkeley Common Env
 
 This tutorial assumes you are able to use the UNIX command line; we provide a tutorial on the [Basics of UNIX](http://statistics.berkeley.edu/computing/training/tutorials) in the context of BCE.
 
-Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (https://github.com/berkeley-scf/tutorial-latex-intro).  You can download the files by doing a `git clone` from a terminal window on UNIX-like machine. The following will work from the command line on BCE.
+Materials for this tutorial, including the R markdown file that was used to create this document are available on github at (https://github.com/berkeley-scf/tutorial-latex-intro).  You can download the files by doing a `git clone` from a terminal window on a UNIX-like machine. The following will work from the command line on BCE:
 ```{r, clone, eval=FALSE}
 git clone https://github.com/berkeley-scf/tutorial-latex-intro
 ```
