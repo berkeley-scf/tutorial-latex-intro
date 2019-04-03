@@ -1,12 +1,12 @@
 # tutorial-latex-intro
 Tutorial on LaTeX 
 
-The video that accompanies this material is available here [on YouTube [UNDER CONSTRUCTION]]().
-
 This tutorial covers:
 
 * The basics of Latex for preparing documents
 
 Included in this repository is a primary example document (demo_paper.tex) that illustrates LaTeX syntax.
 
-The tutorial is illustrated in the context of the [BCE virtual machine](http://bce.berkeley.edu).
+Please see [the latex-intro.html document](https://htmlpreview.github.io/?https://github.com/berkeley-scf/tutorial-latex-intro/blob/master/latex-intro.html) to get started.
+
+A screencast of this material is available [here](https://www.youtube.com/watch?v=8khoelwmMwo).
